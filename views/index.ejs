@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/form_style.css">
+    <link rel="stylesheet" href="/stylesheets/task_style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="form">
+            <form action="/create", method="post">
+                <input class="input-text" type="text" placeholder="Title goes here...", name="title">
+                <textarea class="textarea" placeholder="Write your task details here...", name="details"></textarea>
+                <input class="submit-btn" type="submit" value="Create Task">
+            </form>
+        </div>
+        <div class="tasks">
+            <% if (files.length > 0) { %>
+                <% files.forEach((val) => { %>
+                    <div class="task">
+                        <h1 class="task-title"><%= val.replace(".txt", "") %></h1>
+                        <a class="read_more" href="/files/ <%= val %>">Read More</a>
+                        <a class="edit" href="/files/edit/<%= val %>">Edit Filename</a>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <h1 class="no-task">No tasks yet.</h1>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

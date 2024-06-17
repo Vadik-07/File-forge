@@ -1,0 +1,4 @@
+Hi my name is Vadik Malik
+Currently i am Learning MERN stack
+
+MERN = Mongodb, Express.js, React.js, Node.js

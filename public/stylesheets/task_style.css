@@ -1,0 +1,151 @@
+.tasks {
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start of the container */
+    flex-wrap: wrap; /* Enable wrapping of flex items */
+    gap: 1.2rem;
+}
+
+.task {
+    flex: 1 1 20%; /* Allow the task to grow and shrink, with a base width of 20% */
+    max-width: 20%; /* Ensure the task doesn't exceed 20% width */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.375rem;
+    background-color: #272727;
+    word-wrap: break-word;
+    white-space: normal;
+    /* display: none; */
+}
+
+.task-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: -0.05em;
+    white-space: nowrap; /* Ensure the text does not break into multiple lines */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis if the text overflows */
+}
+
+.read_more {
+    color: #3b82f6;
+}
+
+.no-task {
+    color: #4369a8;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.edit {
+    color: #3b82f6;
+    font-size: smaller;
+    margin-left: 2.9rem;
+}
+
+/* Show Page main Styling */
+
+.show-main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #1e1e1e; /* Equivalent to bg-zinc-900 */
+    color: #fff;
+    padding: 2.5rem;
+}
+
+.file-name {
+    font-size: 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    font: bolder;
+}
+
+.file-data {
+    max-width: 100%; /* Ensure the paragraph doesn't exceed the width of its container */
+    word-wrap: break-word; /* Break long words to fit within the width */ 
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: pre-line;
+}
+
+
+.go-back-btn {
+    background-color: #1d4ed8; /* Equivalent to bg-blue-600 */
+    padding-left: 1.25rem; /* Equivalent to px-5 */
+    padding-right: 1.25rem; /* Equivalent to px-5 */
+    padding-top: 0.5rem; /* Equivalent to py-2 */
+    padding-bottom: 0.5rem; /* Equivalent to py-2 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+/* Edit page ma Styling */
+
+.edit-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 2.5rem;
+}
+
+.edit-go-back-btn {
+    background-color: #1d4ed8; /* Equivalent to bg-blue-600 */
+    padding-left: 1.25rem; /* Equivalent to px-5 */
+    padding-right: 1.25rem; /* Equivalent to px-5 */
+    padding-top: 0.5rem; /* Equivalent to py-2 */
+    padding-bottom: 0.5rem; /* Equivalent to py-2 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    color: #ffffff;
+    margin-bottom: 0rem;
+    margin-bottom: 2rem;
+}
+
+
+
+.previous-file-name {
+    max-width: 40rem;
+    display: block;
+    padding-left: 1.25rem; /* Equivalent to px-5 */
+    padding-right: 1.25rem; /* Equivalent to px-5 */
+    padding-top: 0.5rem; /* Equivalent to py-2 */
+    padding-bottom: 0.5rem; /* Equivalent to py-2 */
+    width: 100%;
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    outline: 2px solid #3b82f6; /* Equivalent to a blue outline */
+    background-color: #272727; /* Equivalent to bg-zinc-900 */
+    color: #807979;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.new-file-name {
+    max-width: 40rem;
+    display: block;
+    padding-left: 1.25rem; /* Equivalent to px-5 */
+    padding-right: 1.25rem; /* Equivalent to px-5 */
+    padding-top: 0.5rem; /* Equivalent to py-2 */
+    padding-bottom: 0.5rem; /* Equivalent to py-2 */
+    width: 100%;
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    outline: 2px solid #3b82f6; /* Equivalent to a blue outline */
+    background-color: #272727; /* Equivalent to bg-zinc-900 */
+    color: #ffffff;
+}
+
+.update-name-btn {
+    margin-top: 1.2rem; /* Equivalent to mt-4 */
+    background-color: #d69e2e; /* Equivalent to bg-blue-600 */
+    padding-left: 1.25rem; /* Equivalent to px-5 */
+    padding-right: 1.25rem; /* Equivalent to px-5 */
+    padding-top: 0.5rem; /* Equivalent to py-2 */
+    padding-bottom: 0.5rem; /* Equivalent to py-2 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    color: #ffffff;
+}

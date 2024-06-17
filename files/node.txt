@@ -1,0 +1,5 @@
+currently, i am learning node.js
+
+and making a small project on the MERN stack
+
+MERN means MongoDB, Express, React, Node js

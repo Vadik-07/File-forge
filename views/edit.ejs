@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/form_style.css">
+    <link rel="stylesheet" href="/stylesheets/task_style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="edit-page">
+
+        <button class="edit-go-back-btn">← Go back</button>
+        <hr/>
+        <form action="/edit", method="post">
+            <input class="previous-file-name" type="text" placeholder="Previous Name", name="Previous", value="<%= filename.replace('.txt','') %>" readonly>
+            <input class="new-file-name" type="text" placeholder="New Name", name="new-name" required>
+            <input class="update-name-btn" type="submit" value="Change Name">
+        </form>
+
+    </div>
+
+</body>
+<script>
+    document.querySelector('.edit-go-back-btn').addEventListener('click', function() {
+        window.location.href = '/';
+    });
+</script>
+</html>
