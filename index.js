@@ -11,14 +11,17 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
     fs.readdir('./files', function(err, files) {
-        res.render("index", { files: files});
+        if (err) {
+            console.error("Error reading directory:", err);
+            return res.status(500).send('Error reading files');
+        }
+        res.render("index", { files: files });
     });
 });
 
-
-app.get('/files/:filename', function(req, res) {
+app.get('/files/:filename', (req, res) => {
     const filename = req.params.filename.trim(); // Trim any extra whitespace
     const filePath = `./files/${filename}`; // Construct file path correctly
     console.log("File path:", filePath); // Log the file path for debugging
@@ -33,11 +36,11 @@ app.get('/files/:filename', function(req, res) {
     });
 });
 
-app.get("/files/edit/:filename", function(req, res){
+app.get("/files/edit/:filename", (req, res) => {
     res.render("edit", {filename: req.params.filename})
 });
 
-app.post("/edit", function(req, res) {
+app.post("/edit", (req, res) => {
     console.log(req.body);
     const prefile = req.body.Previous + '.txt'
     const newfile = req.body['new-name'] + '.txt'
@@ -54,11 +57,14 @@ app.post("/edit", function(req, res) {
     });
 });
 
-
-app.post('/create', function(req, res){
-    fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.details, function(err){
-        res.redirect("/")
-    })
+app.post('/create', (req, res) => {
+    fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.details, (err) => {
+        if (err) {
+            console.error('Error creating file:', err);
+            return res.status(500).send(`Error creating file: ${err.message}`);
+        }
+        res.redirect("/");
+    });
 });
 
 app.listen(3000, () => {
